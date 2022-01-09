@@ -56,7 +56,7 @@ export class BlogDetail extends Component {
                                 </h1>
                             </div>
                             <div className="col-12 text-center">
-                                <img src={blogDetail.image} alt="Image" className='detailImg' />
+                                <img src={blogDetail.image} alt="Blog" className='detailImg' />
                             </div>
                             <div className="col-12">
                                 <p className='detailParagraph'>
