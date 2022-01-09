@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Scenary from '../img/scenary.jpg'
 import axios from 'axios'
 
 export class BlogDetail extends Component {

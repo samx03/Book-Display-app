@@ -1,6 +1,5 @@
 import React from 'react';
 import './css/App.css';
-import BlogCard from './component/BlogCard';
 import BlogList from './screens/BlogList';
 import CreateBlog from './screens/CreateBlog';
 import Navbar from './component/Navbar';
