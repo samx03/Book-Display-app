@@ -1,12 +1,11 @@
 import React from 'react'
-// import Scenary from '../img/scenary.jpg'
 
-function BlogCard(props) {
+function BookCard(props) {
     return (
         <>
             <div className="col-lg-4 col-md-6 col-12">
-                <a href={"/detail/" + props.blogid}>
-                    <div className="card">
+                <a href={"/detail/" + props.bookid}>
+                    <div className="card border-dark mb-3">
                         <img src={props.img} className="card-img-top" alt="Scenary" />
                         <div className="card-body row">
                             <div className="col-12">
@@ -24,4 +23,4 @@ function BlogCard(props) {
     )
 }
 
-export default BlogCard
+export default BookCard

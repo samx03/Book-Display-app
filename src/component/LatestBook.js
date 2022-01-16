@@ -1,11 +1,11 @@
 import React from 'react'
 
-function LatestBlog(props) {
+function LatestBook(props) {
     return (
-        <a href={'/detail/' + props.blogid}>
-            <div className='row'>
+        <a href={'/detail/' + props.bookid}>
+            <div className='row latest-book'>
                 <div className="col-lg-8">
-                    <img className='blogCardImg' src={props.img} alt="Scenary" />
+                    <img className='bookCardImg' src={props.img} alt="Scenary" />
                 </div>
                 <div className="col-lg-4">
                     <div className="row">
@@ -24,4 +24,4 @@ function LatestBlog(props) {
     )
 }
 
-export default LatestBlog
+export default LatestBook
