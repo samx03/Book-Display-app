@@ -2,25 +2,22 @@ import React from 'react'
 
 function LatestBook(props) {
     return (
-        <a href={'/detail/' + props.bookid}>
-            <div className='row latest-book'>
-                <div className="col-lg-8">
-                    <img className='bookCardImg' src={props.img} alt="Scenary" />
-                </div>
-                <div className="col-lg-4">
-                    <div className="row">
-                        <div className="col-12">
-                            <h1>
-                                {props.title}
-                            </h1>
-                        </div>
-                        <div className="col-12">
-                            <p>{props.content}</p>
+        <div className="col-lg-4 col-md-6 col-12">
+                <a href={"/detail/" + props.bookid}>
+                    <div className="card border-dark mb-3">
+                        <img src={props.img} className="card-img-top" alt="Scenary" />
+                        <div className="card-body row">
+                            <div className="col-12">
+                                <h1 className="card-title">{props.title}</h1>
+                            </div>
+                            <div className="col-12">
+                                <p className="card-text">{props.content}</p>
+                            </div>
+
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
-        </a>
     )
 }
 

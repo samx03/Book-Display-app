@@ -15,30 +15,50 @@ function BookList() {
         axios.get(BASE_URL).then(
             (res) => {
                 console.log(res.data)
-                setBook(res.data.reverse())
-                setlatestBook(res.data.shift())
+                setBook(res.data)
             }
         ).catch(
             err => console.log(err)
         )
     }, []);
 
-    console.log("Latest Book",latestBook)
+
+    const LATEST_URL = "https://floran-book-api.herokuapp.com/latest"
+    React.useEffect(() => {
+        axios.get(LATEST_URL).then(
+            (res) => {
+                console.log(res.data)
+                setlatestBook(res.data)
+            }
+        ).catch(
+            err => console.log(err)
+        )
+    }, []);
+
+    console.log("Latest Book", latestBook)
 
     if (book) {
         return (
             <div className='container mx-auto mt-5'>
-                <h1>Latest Book:</h1>
-                <LatestBook bookid={latestBook.id} title={latestBook.name} content={latestBook.description} img={latestBook.cover} />
+                <div className="row">
+                    <h1>Latest Books:</h1>
+                    {
+                        latestBook.map((value, index) => (
+                            <LatestBook bookid={value.id} title={value.name}
+                                img={value.cover}
+                                content={value.description} />
+                        ))
+                    }
+                </div>
                 <div className="row">
                     <h1>Other Books:</h1>
-                   {
-                       book.map((value, index) => (
-                           <BookCard bookid={value.id} title={value.name}
-                           img={value.cover}
-                           content={value.description}/>
-                       ))
-                   }
+                    {
+                        book.map((value, index) => (
+                            <BookCard bookid={value.id} title={value.name}
+                                img={value.cover}
+                                content={value.description} />
+                        ))
+                    }
                 </div>
             </div>
         );
